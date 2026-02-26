@@ -6,10 +6,9 @@
 <title>Портфолио</title>
 
 <style>
-
 /* ===== VARIABLES ===== */
 :root {
-    --bg-light: #fff8f0;
+    --bg-light: #f9f9f9;
     --text-light: #111;
     --accent-light: #ff6f3c;
 
@@ -21,19 +20,16 @@
 }
 
 /* ===== BASE ===== */
-html {
-    scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background: var(--bg-light);
     color: var(--text-light);
     transition: background var(--transition-speed), color var(--transition-speed);
 }
 
-/* ===== THEME CLASSES ===== */
+/* ===== DARK THEME ===== */
 body.dark {
     background: var(--bg-dark);
     color: var(--text-dark);
@@ -65,22 +61,19 @@ body.dark .theme-toggle {
 
 /* ===== HEADER ===== */
 header {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
-    background: transparent;
 }
 
 header h1 {
     font-size: 18px;
-    font-weight: 400;
     color: #777;
     margin: 0;
 }
 
 header h2 {
-    font-size: 36px;
-    margin: 15px 0;
-    font-weight: 600;
+    font-size: 32px;
+    margin: 10px 0;
     color: var(--accent-light);
     transition: color var(--transition-speed);
 }
@@ -92,7 +85,6 @@ body.dark header h2 {
 header p {
     font-size: 18px;
     color: #555;
-    transition: color var(--transition-speed);
 }
 
 body.dark header p {
@@ -103,40 +95,23 @@ body.dark header p {
 section {
     max-width: 900px;
     margin: 0 auto;
-    padding: 80px 20px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    padding: 60px 20px;
 }
 
 /* ===== PROJECT CARDS ===== */
 .projects {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
 }
 
 .project {
     flex: 1 1 40%;
     background: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
+    padding: 20px;
+    border-radius: 10px;
     border: 1px solid #eee;
     transition: 0.3s ease, border-color var(--transition-speed);
-}
-
-.project:hover {
-    transform: translateY(-5px);
 }
 
 body.dark .project {
@@ -144,57 +119,39 @@ body.dark .project {
     border-color: #3b4a66;
 }
 
+.project:hover {
+    transform: translateY(-5px);
+}
+
 /* ===== SOCIAL CARDS ===== */
 .social-cards {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .card {
     flex: 1 1 40%;
-    padding: 30px;
+    padding: 25px;
     text-decoration: none;
     color: #fff;
-    border-radius: 12px;
-    transition: 0.3s ease, background var(--transition-speed);
+    border-radius: 10px;
+    transition: 0.3s ease;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
+.card.steam { background: #1b2838; }
+body.dark .card.steam { background: #2a3b50; }
 
-.card.steam {
-    background: #1b2838;
-}
+.card.instagram { background: #ff6f3c; }
+body.dark .card.instagram { background: #00aaff; }
 
-body.dark .card.steam {
-    background: #2a3b50;
-}
-
-.card.instagram {
-    background: #ff6f3c;
-}
-
-body.dark .card.instagram {
-    background: #00aaff;
-}
+.card:hover { transform: scale(1.05); }
 
 /* ===== CONTACT LINKS ===== */
-a {
-    color: var(--accent-light);
-    text-decoration: none;
-    border-bottom: 1px solid #ccc;
-    transition: all var(--transition-speed);
-}
+a { color: var(--accent-light); text-decoration: none; transition: color var(--transition-speed); }
+body.dark a { color: var(--accent-dark); }
 
-body.dark a {
-    color: var(--accent-dark);
-}
-
-a:hover {
-    border-color: currentColor;
-}
+a:hover { text-decoration: underline; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -204,21 +161,12 @@ footer {
     color: #777;
     transition: color var(--transition-speed);
 }
-
-body.dark footer {
-    color: #ccc;
-}
+body.dark footer { color: #ccc; }
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px) {
-    .projects, .social-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project, .card {
-        flex: 1 1 90%;
-    }
+    .projects, .social-cards { flex-direction: column; align-items: center; }
+    .project, .card { flex: 1 1 90%; }
 }
 </style>
 
@@ -235,11 +183,7 @@ body.dark footer {
 
 <section>
     <h2>Кратко обо мне</h2>
-    <p>
-        На данный момент я изучаю фронтенд-разработку (пока что базу),
-        но в дальнейшем надеюсь изучить и бэкенд-разработку,
-        одним словом — стать Full-stack разработчиком.
-    </p>
+    <p>На данный момент я изучаю фронтенд-разработку (пока что базу), но в дальнейшем надеюсь изучить и бэкенд-разработку, одним словом — стать Full-stack разработчиком.</p>
 </section>
 
 <section>
@@ -247,17 +191,11 @@ body.dark footer {
     <div class="projects">
         <div class="project">
             <h3>Проект 1</h3>
-            <p>
-                Когда-то я сделал сайт со ссылкой на оригинальную музыку
-                и текстом песни. Проект был небольшим, но полезным опытом.
-            </p>
+            <p>Когда-то я сделал сайт со ссылкой на оригинальную музыку и текстом песни. Проект был небольшим, но полезным опытом.</p>
         </div>
         <div class="project">
             <h3>Проект 2</h3>
-            <p>
-                Пока это все мои проекты. В дальнейшем планирую
-                создавать больше работ и развивать свои навыки.
-            </p>
+            <p>Пока это все мои проекты. В дальнейшем планирую создавать больше работ и развивать свои навыки.</p>
         </div>
     </div>
 </section>
@@ -276,7 +214,6 @@ body.dark footer {
             <h3>Steam</h3>
             <p>S1K4OV</p>
         </a>
-
         <a href="https://www.instagram.com/sugurov_127/" target="_blank" class="card instagram">
             <h3>Instagram</h3>
             <p>@sugurov_127</p>
@@ -289,32 +226,11 @@ body.dark footer {
 </footer>
 
 <script>
-// ===== ANIMATION ON SCROLL =====
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, {
-    threshold: 0.15
-});
-
-sections.forEach(section => {
-    observer.observe(section);
-});
-
 // ===== THEME TOGGLE =====
 const toggleBtn = document.querySelector(".theme-toggle");
 toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-    if(document.body.classList.contains("dark")) {
-        toggleBtn.textContent = "Светлая тема";
-    } else {
-        toggleBtn.textContent = "Тёмная тема";
-    }
+    toggleBtn.textContent = document.body.classList.contains("dark") ? "Светлая тема" : "Тёмная тема";
 });
 </script>
 
