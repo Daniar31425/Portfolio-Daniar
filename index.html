@@ -39,7 +39,47 @@
             padding: 10px;
             margin-top: 20px;
         }
-    </style>
+        .social-cards {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 220px;
+        padding: 20px;
+        text-decoration: none;
+        color: white;
+        border-radius: 12px;
+        transition: 0.3s ease;
+        transform: scale(1);
+    }
+
+    .card h3 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .card p {
+        margin: 5px 0 0;
+        font-size: 16px;
+    }
+
+    /* Анимация увеличения */
+        .card:hover {
+        transform: scale(1.1);
+    }
+
+    /* Цвета */
+        .steam {
+        background: linear-gradient(135deg, #1b2838, #2a475e);
+    }
+
+        .instagram {
+        background: linear-gradient(135deg, #e1306c, #f77737);
+    }
+        </style>
 </head>
 <body>
     <header>
@@ -73,6 +113,26 @@
         <p>Instagram: <a href="https://www.instagram.com/sugurov_127/" target="_blank">@sugurov_127</a></p>
         <p>Steam: <a href="https://steamcommunity.com/profiles/76561199148502814/" target="_blank">S1K4OV</a></p>
 
+    </section>
+
+    <section>
+    <h2>Мои профили</h2>
+
+    <div class="social-cards">
+        <a href="https://steamcommunity.com/profiles/76561199148502814/" 
+           target="_blank" 
+           class="card steam">
+            <h3>Steam</h3>
+            <p>S1K4OV</p>
+        </a>
+
+        <a href="https://www.instagram.com/sugurov_127/" 
+           target="_blank" 
+           class="card instagram">
+            <h3>Instagram</h3>
+            <p>@sugurov_127</p>
+        </a>
+    </div>
     </section>
 
     <footer>
