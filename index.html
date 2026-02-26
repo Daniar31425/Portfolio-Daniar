@@ -1,193 +1,218 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио</title>
-    <style>
-        body {
-    font-family: 'Segoe UI', sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Портфолио</title>
+
+<style>
+
+/* ===== BASE ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #1e1e2f, #2c3e50);
-    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+    color: #111;
 }
 
 /* ===== HEADER ===== */
 header {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 40px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 80px 20px;
+    text-align: center;
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
 }
 
 header h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #777;
     margin: 0;
-    font-size: 28px;
-    opacity: 0.9;
 }
 
 header h2 {
-    margin: 10px 0;
-    font-size: 32px;
-    color: #00d4ff;
+    font-size: 36px;
+    margin: 15px 0;
+    font-weight: 600;
 }
 
 header p {
     font-size: 18px;
-    opacity: 0.8;
+    color: #555;
 }
 
 /* ===== SECTIONS ===== */
 section {
-    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h2 {
     font-size: 28px;
     margin-bottom: 30px;
-    position: relative;
 }
 
-h2::after {
-    content: "";
-    width: 60px;
-    height: 3px;
-    background: #00d4ff;
-    display: block;
-    margin: 10px auto;
-    border-radius: 10px;
-}
-
-/* ===== PROJECT CARDS ===== */
+/* ===== PROJECTS ===== */
 .projects {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 30px;
 }
 
 .project {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
+    flex: 1 1 40%;
+    background: #ffffff;
     padding: 25px;
-    width: 320px;
-    border-radius: 15px;
-    transition: 0.4s ease;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    border: 1px solid #eee;
+    transition: 0.3s ease;
 }
 
 .project:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    transform: translateY(-5px);
+}
+
+/* ===== CONTACT LINKS ===== */
+a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    border-color: #000;
 }
 
 /* ===== SOCIAL CARDS ===== */
 .social-cards {
     display: flex;
-    justify-content: center;
-    gap: 25px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .card {
-    width: 240px;
-    padding: 25px;
+    flex: 1 1 40%;
+    padding: 30px;
+    background: #111;
+    color: #fff;
     text-decoration: none;
-    color: white;
-    border-radius: 15px;
-    transition: 0.4s ease;
-    font-weight: bold;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    transition: 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.1);
-}
-
-.steam {
-    background: linear-gradient(135deg, #1b2838, #2a475e);
-}
-
-.instagram {
-    background: linear-gradient(135deg, #e1306c, #833ab4);
-}
-
-/* ===== CONTACT LINKS ===== */
-a {
-    color: #00d4ff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    transform: scale(1.05);
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background: rgba(0,0,0,0.7);
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 14px;
-    opacity: 0.8;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #eaeaea;
+    background: #ffffff;
+    color: #777;
 }
+
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Студент первого курса группы ИЭФ24-9к1</h1>
-        <h2>Серікбай Данияр Алиханұлы</h2>
-        <p>Фронтенд-разработчик</p>
-    </header>
 
-    <section>
-        <h2>Кратко обо мне</h2>
-        <p>На данный момент я изучаю Фронт-енд разработку (пока что базу) но в дальнейшем надеюсь еше и изучить Бэк-енд разработку, одним словом стать Full-stack разработчиком.</Full-stack></p>
-    </section>
+<header>
+    <h1>Студент первого курса группы ИЭФ24-9к1</h1>
+    <h2>Серікбай Данияр Алиханұлы</h2>
+    <p>Фронтенд-разработчик</p>
+</header>
 
-    <section>
-        <h2>Мои проекты</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>Проект 1</h3>
-                <p>Когда то я сделал сайт по типу ссылкой на ориг музыку и в сайте было текст песни (да я знаю это конечно же не густо но хоть что то, но оно было утерено.</p>
-            </div>
-            <div class="project">
-                <h3>Проект 2</h3>
-                <p>Пока что все из проектов сделанных мною, в дальнейшем я постараюсь сделать хоть какие нибудь проекты в свободное время.</p>
-            </div>
+<section>
+    <h2>Кратко обо мне</h2>
+    <p>
+        На данный момент я изучаю фронтенд-разработку (пока что базу),
+        но в дальнейшем надеюсь изучить и бэкенд-разработку,
+        одним словом — стать Full-stack разработчиком.
+    </p>
+</section>
+
+<section>
+    <h2>Мои проекты</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>Проект 1</h3>
+            <p>
+                Когда-то я сделал сайт со ссылкой на оригинальную музыку
+                и текстом песни. Проект был небольшим, но полезным опытом.
+            </p>
         </div>
-    </section>
+        <div class="project">
+            <h3>Проект 2</h3>
+            <p>
+                Пока это все мои проекты. В дальнейшем планирую
+                создавать больше работ и развивать свои навыки.
+            </p>
+        </div>
+    </div>
+</section>
 
-    <section>
-        <h2>Контакты</h2>
-        <p>Email: <a href="mailto:alihan120serik@gmail.com">alihan120serik@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/sugurov_127/" target="_blank">@sugurov_127</a></p>
-        <p>Steam: <a href="https://steamcommunity.com/profiles/76561199148502814/" target="_blank">S1K4OV</a></p>
+<section>
+    <h2>Контакты</h2>
+    <p>Email: <a href="mailto:alihan120serik@gmail.com">alihan120serik@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/sugurov_127/" target="_blank">@sugurov_127</a></p>
+    <p>Steam: <a href="https://steamcommunity.com/profiles/76561199148502814/" target="_blank">S1K4OV</a></p>
+</section>
 
-    </section>
-
-    <section>
+<section>
     <h2>Мои профили</h2>
-
     <div class="social-cards">
-        <a href="https://steamcommunity.com/profiles/76561199148502814/" 
-           target="_blank" 
-           class="card steam">
+        <a href="https://steamcommunity.com/profiles/76561199148502814/" target="_blank" class="card">
             <h3>Steam</h3>
             <p>S1K4OV</p>
         </a>
 
-        <a href="https://www.instagram.com/sugurov_127/" 
-           target="_blank" 
-           class="card instagram">
+        <a href="https://www.instagram.com/sugurov_127/" target="_blank" class="card">
             <h3>Instagram</h3>
             <p>@sugurov_127</p>
         </a>
     </div>
-    </section>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Данияр</p>
-    </footer>
+<footer>
+    <p>&copy; 2025 Данияр</p>
+</footer>
+
+<script>
+
+/* ===== ANIMATION ON SCROLL ===== */
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+</script>
+
 </body>
 </html>
